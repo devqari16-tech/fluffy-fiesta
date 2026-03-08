@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Window Tinting Toronto | Car Window Tinting | AI BABA Services</title>
+    <meta name="description" content="Professional window tinting services in Toronto by AI BABA Services. Automotive, commercial & residential window tinting. Premium films, lifetime warranty. Call (437) 545-7974">
+    <meta name="keywords" content="window tinting Toronto, car window tinting, automotive tinting, window tinting near me, vehicle tinting, auto tint, window film, tint shop Toronto, professional window tinting, mobile window tinting, Scarborough window tinting, Ontario car tinting, AI BABA tinting">
+
+    <!-- Local Business Schema for Window Tinting -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Window Tinting Services",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "AI BABA Services Inc",
+        "telephone": "+1-437-545-7974",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "127 Manville Road, Unit 1",
+          "addressLocality": "Scarborough",
+          "addressRegion": "Ontario",
+          "addressCountry": "CA"
+        }
+      },
+      "description": "Professional automotive, commercial and residential window tinting services",
+      "serviceType": "Window Tinting",
+      "areaServed": ["Toronto", "Scarborough", "Ontario"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Window Tinting Packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Basic Window Tinting",
+            "price": "95",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Premium Window Tinting",
+            "price": "179",
+            "priceCurrency": "CAD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Luxury Window Tinting",
+            "price": "249",
+            "priceCurrency": "CAD"
+          }
+        ]
+      }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* Additional styles to ensure proper display */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+            margin: auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 2px solid #d4af37;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .btn-book, .btn-quote {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .btn-book:hover, .btn-quote:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .close {
+            color: #d4af37;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>AI BABA <span>WINDOWS TINTING</span></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="window-tinting.html">Home</a></li>
+                    <li><a href="service-selector.html">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="simulator.html" class="simulator-nav-link">Simulator</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#" id="navStaffLogin" class="staff-login-btn">
+                        <i class="fas fa-user-shield"></i>
+                        Staff Login
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9)), url('pics/automotive-baground.png') center/cover;">
+        <div class="hero-background-animation">
+            <div class="animated-circle circle-1"></div>
+            <div class="animated-circle circle-2"></div>
+            <div class="animated-circle circle-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>PREMIUM AUTOMOTIVE TINTING</span>
+                </div>
+                <h1>Professional Window Tinting</h1>
+                <p>Enhance your vehicle's comfort, privacy, and style with our premium window tinting services. Expert installation with lifetime warranty.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary book-btn">
+                        <i class="fas fa-calendar"></i>
+                        <span>BOOK APPOINTMENT</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <button class="btn-secondary quote-btn">
+                        <i class="fas fa-calculator"></i>
+                        <span>Get Quote</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Vehicles Tinted</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Window Tinting Packages</h2>
+            <p class="services-intro">Choose from our professional tinting packages designed for every budget and need</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="package-header">
+                        <h3>BASIC TINT</h3>
+                        <div class="price">$95</div>
+                        <div class="service-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Starting from - 2 hour service</span>
+                        </div>
+                    </div>
+                    <div class="car-type">STANDARD VEHICLES</div>
+                    <ul class="features">
+                        <li>Standard window film</li>
+                        <li>Basic heat reduction</li>
+                        <li>UV protection</li>
+                        <li>2-year warranty</li>
+                        <li>Professional installation</li>
+                    </ul>
+                    <button class="btn-book book-btn">
+                        <i class="fas fa-calendar"></i>
+                        CHOOSE PACKAGE
+                    </button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="package-header">
+                        <h3>PRO TINT</h3>
+                        <div class="price">$179</div>
+                        <div class="service-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Starting from - 2 hour service</span>
+                        </div>
+                    </div>
+                    <div class="car-type">ALL VEHICLE TYPES</div>
+                    <ul class="features">
+                        <li>Premium ceramic film</li>
+                        <li>Superior heat reduction</li>
+                        <li>99% UV protection</li>
+                        <li>5-year warranty</li>
+                        <li>Professional installation</li>
+                        <li>Lifetime support</li>
+                    </ul>
+                    <button class="btn-book book-btn">
+                        <i class="fas fa-calendar"></i>
+                        CHOOSE PACKAGE
+                    </button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="package-header">
+                        <h3>PREMIUM TINT</h3>
+                        <div class="price">$249</div>
+                        <div class="service-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Starting from - 2 hour service</span>
+                        </div>
+                    </div>
+                    <div class="car-type">LUXURY & SPORTS CARS</div>
+                    <ul class="features">
+                        <li>Top-grade ceramic film</li>
+                        <li>Maximum heat reduction</li>
+                        <li>99% UV protection</li>
+                        <li>Lifetime warranty</li>
+                        <li>Professional installation</li>
+                        <li>Custom color matching</li>
+                    </ul>
+                    <button class="btn-book book-btn">
+                        <i class="fas fa-calendar"></i>
+                        CHOOSE PACKAGE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tint Simulator Section -->
+    <section class="tint-simulator-section" style="padding: 120px 0; background: var(--secondary-color);">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--text-light);">Tint Simulator</h2>
+            <p class="simulator-intro" style="text-align: center; font-size: 1.2rem; color: var(--text-gray); margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">See how different tint levels will look on your vehicle before you decide</p>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="simulator.html" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; background: var(--gradient-accent); color: black; padding: 18px 36px; border-radius: var(--border-radius); font-weight: 700; font-size: 1.1rem; text-decoration: none; transition: var(--transition); box-shadow: var(--shadow-medium); position: relative; overflow: hidden;">
+                    <i class="fas fa-eye"></i>
+                    <span>TRY OUR SIMULATOR</span>
+                    <div class="btn-shine" style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent); transition: var(--transition);"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Why Choose Us Section -->
+    <section class="features-section" style="padding: 120px 0; background: var(--primary-color);">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--text-light);">Why Choose AI BABA AUTO DETAILING AND TINTING?</h2>
+            <div class="features-showcase" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 4rem;">
+                <div class="feature-showcase-item" style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: var(--border-radius); text-align: center; border: 2px solid rgba(212, 175, 55, 0.3); transition: var(--transition); box-shadow: var(--shadow-medium);">
+                    <div class="feature-icon" style="width: 80px; height: 80px; margin: 0 auto 2rem; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: black; box-shadow: var(--shadow-medium);">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 style="color: var(--text-light); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">15+ Years Experience</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 2rem; line-height: 1.6; font-size: 1.1rem;">Over a decade of professional window tinting expertise with thousands of satisfied customers</p>
+                    <div class="feature-stats" style="display: flex; justify-content: space-between; gap: 1rem;">
+                        <div class="stat" style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; color: var(--accent-color); font-weight: 600; flex: 1; text-align: center;">5000+ Cars Tinted</div>
+                        <div class="stat" style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; color: var(--accent-color); font-weight: 600; flex: 1; text-align: center;">98% Satisfaction</div>
+                    </div>
+                </div>
+                <div class="feature-showcase-item" style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: var(--border-radius); text-align: center; border: 2px solid rgba(212, 175, 55, 0.3); transition: var(--transition); box-shadow: var(--shadow-medium);">
+                    <div class="feature-icon" style="width: 80px; height: 80px; margin: 0 auto 2rem; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: black; box-shadow: var(--shadow-medium);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 style="color: var(--text-light); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">Lifetime Warranty</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 2rem; line-height: 1.6; font-size: 1.1rem;">Premium packages come with lifetime warranty against bubbling, peeling, and fading</p>
+                    <div class="feature-stats" style="display: flex; justify-content: space-between; gap: 1rem;">
+                        <div class="stat" style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; color: var(--accent-color); font-weight: 600; flex: 1; text-align: center;">Lifetime Coverage</div>
+                        <div class="stat" style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; color: var(--accent-color); font-weight: 600; flex: 1; text-align: center;">No Questions Asked</div>
+                    </div>
+                </div>
+                <div class="feature-showcase-item" style="background: var(--gradient-card); padding: 3rem 2rem; border-radius: var(--border-radius); text-align: center; border: 2px solid rgba(212, 175, 55, 0.3); transition: var(--transition); box-shadow: var(--shadow-medium);">
+                    <div class="feature-icon" style="width: 80px; height: 80px; margin: 0 auto 2rem; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: black; box-shadow: var(--shadow-medium);">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 style="color: var(--text-light); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">Mobile Installation</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 2rem; line-height: 1.6; font-size: 1.1rem;">We come to your location anywhere in the GTA for convenient mobile installation service</p>
+                    <div class="feature-stats" style="display: flex; justify-content: space-between; gap: 1rem;">
+                        <div class="stat" style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; color: var(--accent-color); font-weight: 600; flex: 1; text-align: center;">GTA-Wide Service</div>
+                        <div class="stat" style="background: rgba(212, 175, 55, 0.1); padding: 1rem; border-radius: 8px; color: var(--accent-color); font-weight: 600; flex: 1; text-align: center;">At Your Location</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Enhanced Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-header">
+                <div class="reviews-badge">
+                    <i class="fas fa-star"></i>
+                    <span>CUSTOMER REVIEWS</span>
+                </div>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="reviews-subtitle">Real experiences from satisfied customers who trust AI BABA for their automotive tinting needs</p>
+
+                <div class="reviews-stats">
+                    <div class="review-stat">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="review-stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="review-stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="review-verified">
+                        <i class="fas fa-check-circle"></i>
+                        Verified
+                    </div>
+                    <div class="review-card-header">
+                        <div class="review-platform">
+                            <div class="platform-badge">
+                                <i class="fab fa-google"></i>
+                                Google Reviews
+                            </div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">MJ</div>
+                            <div class="reviewer-details">
+                                <h4>Michael Johnson</h4>
+                                <div class="reviewer-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Toronto, ON
+                                </div>
+                                <div class="review-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-number">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">Absolutely amazing service! The team was professional, punctual, and the quality of work exceeded my expectations. My BMW looks incredible with the ceramic tint, and the heat reduction is noticeable immediately.</p>
+                        <div class="review-service">
+                            <i class="fas fa-car"></i>
+                            Premium Ceramic Tinting
+                        </div>
+                        <div class="review-helpful">
+                            <div class="helpful-count">
+                                <i class="fas fa-thumbs-up"></i>
+                                23 people found this helpful
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    Helpful
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-reply"></i>
+                                    Reply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <div class="review-verified">
+                        <i class="fas fa-check-circle"></i>
+                        Verified
+                    </div>
+                    <div class="review-card-header">
+                        <div class="review-platform">
+                            <div class="platform-badge">
+                                <i class="fab fa-yelp"></i>
+                                Yelp
+                            </div>
+                            <div class="review-date">1 month ago</div>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">SK</div>
+                            <div class="reviewer-details">
+                                <h4>Sarah Kim</h4>
+                                <div class="reviewer-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Mississauga, ON
+                                </div>
+                                <div class="review-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-number">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">The mobile service was a game-changer! They came to my office parking lot and completed the entire job while I was at work. Professional setup, quality materials, and fantastic results. Highly recommended!</p>
+                        <div class="review-service">
+                            <i class="fas fa-mobile-alt"></i>
+                            Mobile Installation Service
+                        </div>
+                        <div class="review-helpful">
+                            <div class="helpful-count">
+                                <i class="fas fa-thumbs-up"></i>
+                                18 people found this helpful
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    Helpful
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-reply"></i>
+                                    Reply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <div class="review-verified">
+                        <i class="fas fa-check-circle"></i>
+                        Verified
+                    </div>
+                    <div class="review-card-header">
+                        <div class="review-platform">
+                            <div class="platform-badge">
+                                <i class="fab fa-facebook"></i>
+                                Facebook
+                            </div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">DP</div>
+                            <div class="reviewer-details">
+                                <h4>David Patel</h4>
+                                <div class="reviewer-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Scarborough, ON
+                                </div>
+                                <div class="review-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-number">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">Outstanding customer service and attention to detail. They explained the entire process, showed me different film options, and the final result looks factory-perfect. The lifetime warranty gives me peace of mind.</p>
+                        <div class="review-service">
+                            <i class="fas fa-shield-alt"></i>
+                            Luxury Package with Warranty
+                        </div>
+                        <div class="review-helpful">
+                            <div class="helpful-count">
+                                <i class="fas fa-thumbs-up"></i>
+                                31 people found this helpful
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    Helpful
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-reply"></i>
+                                    Reply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 4 -->
+                <div class="review-card">
+                    <div class="review-verified">
+                        <i class="fas fa-check-circle"></i>
+                        Verified
+                    </div>
+                    <div class="review-card-header">
+                        <div class="review-platform">
+                            <div class="platform-badge">
+                                <i class="fab fa-google"></i>
+                                Google Reviews
+                            </div>
+                            <div class="review-date">1 week ago</div>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">LW</div>
+                            <div class="reviewer-details">
+                                <h4>Lisa Wong</h4>
+                                <div class="reviewer-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Markham, ON
+                                </div>
+                                <div class="review-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-number">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">Had my SUV tinted here and couldn't be happier! The difference in temperature inside the car is incredible. Professional team, fair pricing, and they even cleaned my car before installation. Definitely coming back for my husband's car!</p>
+                        <div class="review-service">
+                            <i class="fas fa-car"></i>
+                            SUV Full Tinting Package
+                        </div>
+                        <div class="review-helpful">
+                            <div class="helpful-count">
+                                <i class="fas fa-thumbs-up"></i>
+                                15 people found this helpful
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    Helpful
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-reply"></i>
+                                    Reply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review CTA Section -->
+            <div class="review-form-section">
+                <div class="review-form-header">
+                    <h3>Share Your Experience</h3>
+                    <p>Help others discover the quality and service that sets AI BABA apart. Your review makes a difference!</p>
+                </div>
+                <div class="review-cta-buttons">
+                    <a href="https://www.google.com/search?q=AI+BABA+WINDOWS+TINTING+reviews" target="_blank" class="review-cta-btn">
+                        <i class="fab fa-google"></i>
+                        Review on Google
+                    </a>
+                    <a href="#" class="review-cta-btn secondary">
+                        <i class="fas fa-star"></i>
+                        Write a Review
+                    </a>
+                </div>
+            </div>
+
+                <!-- More Reviews Button -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="reviews-page.html" class="btn-more-reviews" style="
+                        background: var(--gradient-accent);
+                        color: black;
+                        border: none;
+                        padding: 18px 36px;
+                        border-radius: 50px;
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        cursor: pointer;
+                        transition: var(--transition);
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.8rem;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+                    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(212, 175, 55, 0.5)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(212, 175, 55, 0.4)'">
+                        <i class="fas fa-comments"></i>
+                        More Reviews
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the legal tint limits in Ontario?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>In Ontario, front windows (driver and passenger) must allow at least 70% of light to pass through. Rear windows have no restrictions and can be tinted as dark as you prefer.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does window tinting take?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most vehicles take 2-4 hours depending on the package and vehicle type. We'll provide an accurate time estimate when you book your appointment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's the difference between ceramic and standard film?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ceramic film offers superior heat rejection, durability, and clarity compared to standard film. It doesn't fade or bubble and provides better UV protection while maintaining excellent visibility.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer mobile installation?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide mobile installation service throughout the GTA. We'll come to your location with all necessary equipment for professional installation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's included in your warranty?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our warranty covers bubbling, peeling, discoloration, and adhesion failure. Premium packages include lifetime warranty with free replacement if any issues occur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Mobile Service Section -->
+    <section class="mobile-service">
+        <div class="container">
+            <h2 class="section-title">GTA-Wide Mobile Installation</h2>
+            <div class="mobile-hero">
+                <div class="mobile-content">
+                    <div class="mobile-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>MOBILE SERVICE</span>
+                    </div>
+                    <h3>We Come to You</h3>
+                    <p>Professional window tinting at your location anywhere in the Greater Toronto Area. No need to leave your home or office.</p>
+                    <div class="mobile-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-home"></i>
+                            <span>Home Installation</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-building"></i>
+                            <span>Office Service</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible Scheduling</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-tools"></i>
+                            <span>Full Equipment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-visual">
+                    <img src="https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Mobile Tinting Service" style="width: 100%; height: 400px; object-fit: cover; border-radius: 15px;">
+                </div>
+            </div>
+
+            <div class="service-areas">
+                <h4>Service Areas</h4>
+                <div class="areas-grid">
+                    <div class="area-group">
+                        <h5><i class="fas fa-city"></i> Toronto</h5>
+                        <ul class="area-list">
+                            <li>Downtown Toronto</li>
+                            <li>North York</li>
+                            <li>Scarborough</li>
+                            <li>Etobicoke</li>
+                        </ul>
+                    </div>
+                    <div class="area-group">
+                        <h5><i class="fas fa-map"></i> GTA West</h5>
+                        <ul class="area-list">
+                            <li>Mississauga</li>
+                            <li>Brampton</li>
+                            <li>Oakville</li>
+                            <li>Burlington</li>
+                        </ul>
+                    </div>
+                    <div class="area-group">
+                        <h5><i class="fas fa-compass"></i> GTA East</h5>
+                        <ul class="area-list">
+                            <li>Markham</li>
+                            <li>Richmond Hill</li>
+                            <li>Vaughan</li>
+                            <li>Ajax</li>
+                        </ul>
+                    </div>
+                    <div class="area-group">
+                        <h5><i class="fas fa-location-arrow"></i> Durham</h5>
+                        <ul class="area-list">
+                            <li>Pickering</li>
+                            <li>Whitby</li>
+                            <li>Oshawa</li>
+                            <li>Clarington</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mobile-contact">
+                    <div class="contact-card">
+                        <h5>Book Mobile Service</h5>
+                        <p>Schedule your convenient mobile installation today</p>
+                        <div class="contact-options">
+                            <a href="tel:+14375457974" class="mobile-contact-btn phone">
+                                <i class="fas fa-phone"></i>
+                                Call Now
+                            </a>
+                            <button class="mobile-contact-btn book book-btn">
+                                <i class="fas fa-calendar"></i>
+                                Book Online
+                            </button>
+                        </div>
+                        <div class="mobile-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Mobile service available 7 days a week</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <h2 class="section-title">Visit Our Shop</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="location-details">
+                        <h3>Our Location</h3>
+                        <div class="address-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>127 Manville Road, Unit 1<br>Scarborough, ON</p>
+                            </div>
+                        </div>
+                        <div class="address-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (437) 545-7974</p>
+                            </div>
+                        </div>
+                        <div class="address-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Monday - Sunday<br>10:00 AM - 9:00 PM</p>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/dir//127+Manville+Road+Unit+1,+Scarborough,+ON" target="_blank" class="btn-directions">
+                            <i class="fas fa-directions"></i>
+                            Get Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div id="google-map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="simple-contact-wrapper">
+                <div class="contact-form-simple">
+                    <h3>Send us a message</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Full Name *" required>
+                        <input type="email" placeholder="Email *" required>
+                        <input type="tel" placeholder="Phone Number *" required>
+                        <textarea placeholder="Message *" rows="5" required></textarea>
+                        <button type="submit" class="btn-send-message">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info-simple">
+                    <h3>Get in Touch</h3>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>+1 (437) 545-7974</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@aibabaservices.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address</strong>
+                            <p>127 Manville Road, Unit 1<br>Scarborough, ON</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Hours</strong>
+                            <p>Mon-Sun: 10 AM - 9 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <img src="ai-baba-logo.png" alt="AI BABA Logo" class="footer-logo-img" style="max-width: 120px; height: auto;">
+                        <h3>AI BABA <span>SERVICES INC</span></h3>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="window-tinting.html">Automotive Tinting</a></li>
+                        <li><a href="commercial-residential.html">Commercial & Residential</a></li>
+                        <li><a href="detailing.html">Car Detailing</a></li>
+                        <li><a href="simulator.html">Tint Simulator</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="window-tinting.html#about">About Us</a></li>
+                        <li><a href="window-tinting.html#pricing">Pricing</a></li>
+                        <li><a href="window-tinting.html#gallery">Gallery</a></li>
+                        <li><a href="window-tinting.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-link yelp">
+                            <i class="fab fa-yelp"></i>
+                        </a>
+                    </div>
+                    <div class="footer-hours">
+                        <h5>Business Hours</h5>
+                        <p>Monday - Sunday<br>10:00 AM - 9:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+
+<div class="footer-bottom-content">
+                            <p>&copy; 2024 AI BABA AUTO DETAILING AND TINTING. All rights reserved.</p>
+                            <div class="gtranslate_wrapper" id="gt-wrapper-83611016"></div>
+                            <div class="footer-bottom-links">
+                                <a href="#" id="staffLoginBtn" class="staff-portal-link">Staff Portal</a>
+                                <span class="separator">|</span>
+                                <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+                                <span class="separator">|</span>
+                                <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div style="padding: 30px;">
+                <h2 style="color: #d4af37; text-align: center; margin-bottom: 10px;">Book Your Appointment</h2>
+                <p style="color: #ccc; text-align: center; margin-bottom: 30px;">Schedule your professional window tinting service</p>
+                <form id="bookingForm" action="https://formspree.io/f/mrbaoywb" method="POST">
+                    <input type="hidden" name="form_type" value="booking">
+                    <input type="hidden" name="service_type" value="window_tinting">
+                    <input type="hidden" name="_subject" value="New Booking Request - AI BABA AUTO DETAILING AND TINTING">
+                    <div class="form-row">
+                        <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                            <i class="fas fa-user" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                            <input type="text" name="name" placeholder="Your Full Name" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                        </div>
+                        <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                            <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                            <input type="email" name="email" placeholder="Email Address" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                        </div>
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-phone" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <input type="tel" name="phone" placeholder="Phone Number (with area code)" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                    </div>
+                    <div classs="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-car" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <select name="package" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                            <option value="">Select Package</option>
+                            <option value="basic">Basic Package - $159</option>
+                            <option value="premium">Premium Package - $229</option>
+                            <option value="luxury">Luxury Package - $299</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-map-marker-alt" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <select name="serviceLocation" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                            <option value="">Choose Service Location</option>
+                            <option value="shop">Come to Shop (Free)</option>
+                            <option value="mobile">Mobile Service (+$25)</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-calendar" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <input type="date" name="date" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-clock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <select name="time" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                            <option value="">Select Time</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-car" style="position: absolute; left: 15px; top: 15px; color: #d4af37;"></i>
+                        <textarea name="vehicleDetails" placeholder="Vehicle Details (Year, Make, Model, Any special requirements)" rows="3" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-book-submit" style="width: 100%; background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%); color: black; border: none; padding: 18px; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; text-transform: uppercase; transition: all 0.3s ease;">
+                        <i class="fas fa-check"></i>
+                        BOOK APPOINTMENT
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close quote-close">&times;</span>
+            <div style="padding: 30px;">
+                <h2 style="color: #d4af37; text-align: center; margin-bottom: 10px;">Get Your Quote</h2>
+                <p style="color: #ccc; text-align: center; margin-bottom: 30px;">Get an instant estimate for your window tinting service</p>
+                <form id="quoteForm" action="https://formspree.io/f/mrbaoywb" method="POST">
+                    <input type="hidden" name="form_type" value="quote">
+                    <input type="hidden" name="service_type" value="window_tinting">
+                    <input type="hidden" name="service_source_page" value="Automotive Window Tinting">
+                    <input type="hidden" name="_subject" value="New Quote Request from Automotive Window Tinting - AI BABA AUTO DETAILING AND TINTING">
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-user" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <input type="text" name="name" placeholder="Your Full Name" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <input type="email" name="email" placeholder="Email Address for Quote" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-phone" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <input type="tel" name="phone" placeholder="Phone Number (SMS notifications)" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-calendar-alt" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <select name="vehicleYear" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                            <option value="">Vehicle Year</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="older">2017 or Older</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-car" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <input type="text" name="vehicleMake" placeholder="Vehicle Make (e.g., Toyota, BMW)" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-tag" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <input type="text" name="vehicleModel" placeholder="Vehicle Model (e.g., Camry, X5)" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                    </div>
+                    <div class="input-group" style="position: relative; margin-bottom: 20px;">
+                        <i class="fas fa-list" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #d4af37;"></i>
+                        <select name="serviceType" required style="width: 100%; padding: 15px 15px 15px 45px; border: 1px solid #d4af37; border-radius: 8px; background: #2a2a2a; color: white; font-size: 16px;">
+                            <option value="">Select Service Level</option>
+                            <option value="basic">Basic Tinting - Standard Film</option>
+                            <option value="premium">Premium Ceramic - Heat Rejection</option>
+                            <option value="luxury">Luxury Ceramic - Maximum Protection</option>
+                            <option value="custom">Custom/Specialty Requirements</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-quote-submit" style="width: 100%; background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%); color: black; border: none; padding: 18px; border-radius: 12px; font-weight: 700; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; text-transform: uppercase; transition: all 0.3s ease;">
+                        <i class="fas fa-calculator"></i>
+                        GET PROFESSIONAL QUOTE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Modal -->
+    <div id="staffModal" class="modal">
+        <div class="modal-content staff-modal">
+            <span class="close" id="staffClose">&times;</span>
+            <div class="staff-header">
+                <i class="fas fa-user-shield"></i>
+                <h2>Staff Portal</h2>
+                <p>Access your dashboard and manage operations</p>
+            </div>
+            <form id="staffLoginForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Staff ID" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="remember-forgot">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-staff-login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    LOGIN TO PORTAL
+                </button>
+            </form>
+            <div class="staff-features">
+                <div class="feature-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Manage Appointments</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customer Database</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics Dashboard</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // EmailJS functionality removed
+
+        // Load Google Maps
+        function initMap() {
+            try {
+                const shopLocation = { lat: 43.7315, lng: -79.2665 };
+                const mapElement = document.getElementById('google-map');
+
+                if (!mapElement || !window.google || !window.google.maps) {
+                    console.warn('Map element or Google Maps not available');
+                    return;
+                }
+
+                const map = new google.maps.Map(mapElement, {
+                    zoom: 15,
+                    center: shopLocation,
+                    mapTypeControl: false,
+                    streetViewControl: true,
+                    fullscreenControl: true
+                });
+
+                const marker = new google.maps.Marker({
+                    position: shopLocation,
+                    map: map,
+                    title: 'AI BABA AUTO DETAILING AND TINTING'
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div style="padding: 15px; font-family: 'Poppins', sans-serif;">
+                            <h3 style="margin: 0 0 10px 0; color: #0f0f23;">AI BABA AUTO DETAILING AND TINTING</h3>
+                            <p style="margin: 0 0 10px 0; color: #6c757d;">
+                                <strong>Address:</strong><br>127 Manville Road, Unit 1<br>Scarborough, ON
+                            </p>
+                            <p style="margin: 0 0 10px 0; color: #6c757d;">
+                                <strong>Phone:</strong> +1 (437) 545-7974<br>
+                                <strong>Hours:</strong> Mon-Sun 10 AM - 9 PM
+                            </p>
+                        </div>
+                    `
+                });
+
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+
+                setTimeout(() => {
+                    infoWindow.open(map, marker);
+                }, 1000);
+
+            } catch (error) {
+                console.error('Error initializing Google Maps:', error);
+            }
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <!-- WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send/?phone=%2B16477788430&text=Hi%21+I%27m+interested+in+your+window+tinting+services.+Could+you+please+provide+me+with+more+information%3F&type=phone_number&app_absent=0" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script id="gt_widget_script_83611016-js-before">
+        window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {}; window.gtranslateSettings['83611016'] = {"default_language": "en", "languages": ["af", "sq", "am", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "ny", "zh-CN", "zh-TW", "co", "hr", "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr", "fy", "gl", "ka", "de", "el", "gu", "ht", "ha", "haw", "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jw", "kn", "kk", "km", "ko", "ku", "ky", "lo", "la", "lv", "lt", "lb", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "ps", "fa", "pl", "pt", "pa", "ro", "ru", "sm", "gd", "sr", "st", "sn", "sd", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te", "th", "tr", "uk", "ur", "uz", "vi", "cy", "xh", "yi", "yo", "zu"], "url_structure": "none", "wrapper_selector": "#gt-wrapper-83611016", "select_language_label": "Select Language", "horizontal_position": "inline", "flags_location": "\/flags\/"};
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" data-no-optimize="1" data-no-minify="1" data-gt-widget-id="83611016" defer></script>
+
+    <script>
+        // Initialize Google Maps
+        function initMap() {

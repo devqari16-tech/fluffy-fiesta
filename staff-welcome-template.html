@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to AI BABA AUTO DETAILING AND TINTING Team</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 30px;
+        }
+        .credentials-box {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .credentials-box h3 {
+            margin: 0 0 15px 0;
+            font-size: 20px;
+        }
+        .credential-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .login-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+        .security-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 Welcome to AI BABA AUTO DETAILING AND TINTING!</h1>
+            <p>Professional Window Tinting & Auto Services</p>
+        </div>
+        
+        <div class="content">
+            <h2>Welcome {{staff_name}}!</h2>
+            <p>Congratulations! You have been added to our team as a <strong>{{role}}</strong>. We're excited to have you on board!</p>
+            
+            <div class="credentials-box">
+                <h3>🔐 Your Login Credentials</h3>
+                <div class="credential-item">
+                    <strong>Staff ID:</strong> {{staff_id}}
+                </div>
+                <div class="credential-item">
+                    <strong>Username:</strong> {{username}}
+                    <small style="display: block; opacity: 0.8; font-size: 0.9em; margin-top: 5px;">
+                        (Use either Staff ID or Username to login)
+                    </small>
+                </div>
+                <div class="credential-item">
+                    <strong>Password:</strong> {{password}}
+                </div>
+                <div class="credential-item">
+                    <strong>Role:</strong> {{role}}
+                </div>
+            </div>
+            
+            <div class="security-notice">
+                <h4>🔒 Security Notice:</h4>
+                <p><strong>For security purposes, please change your password after your first login.</strong> Keep your credentials safe and never share them with unauthorized personnel.</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{{login_url}}" class="login-btn">
+                    🚀 Access Staff Dashboard
+                </a>
+            </div>
+            
+            <h3>📋 Your Access Includes:</h3>
+            <ul>
+                <li>Staff dashboard access</li>
+                <li>Customer management tools</li>
+                <li>Booking and quote management</li>
+                <li>Invoice generation system</li>
+                <li>Review management</li>
+            </ul>
+            
+            <h3>📞 Need Help?</h3>
+            <p>If you have any questions or need assistance:</p>
+            <ul>
+                <li><strong>Phone:</strong> +1 (437) 545-7974</li>
+                <li><strong>Email:</strong> aibaba.service@gmail.com</li>
+                <li><strong>Address:</strong> 127 Manville Road, Unit 1, Scarborough, ON</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p><strong>{{company_name}}</strong></p>
+            <p>Professional Window Tinting & Auto Services</p>
+            <p>This email contains sensitive login information. Please keep it secure.</p>
+        </div>
+    </div>
+</body>
+</html>

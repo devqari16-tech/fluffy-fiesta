@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave a Review - AI BABA AUTO DETAILING AND TINTING</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.05) 50%, transparent 70%);
+            transform: rotate(15deg);
+            pointer-events: none;
+            z-index: 0;
+            animation: float-bg 20s ease-in-out infinite;
+        }
+
+        @keyframes float-bg {
+            0%, 100% {
+                transform: rotate(15deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(15deg) translateY(-20px);
+            }
+        }
+
+        .review-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .review-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4ff, #ff6b35, #8a2be2, #00d4ff);
+            background-size: 300% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .review-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.6;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .review-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .company-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .review-content {
+            padding: 3rem 2rem;
+        }
+
+        .review-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+
+        .form-section h3 {
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #00d4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .star {
+            font-size: 3rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+
+        .rating-text {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-top: 1rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem auto 0;
+            min-width: 250px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .thank-you.show {
+            display: block;
+        }
+
+        .thank-you i {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .thank-you h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .review-header {
+                padding: 2rem 1rem;
+            }
+
+            .review-header h1 {
+                font-size: 2rem;
+            }
+
+            .review-content {
+                padding: 2rem 1rem;
+            }
+
+            .star-rating {
+                gap: 0.5rem;
+            }
+
+            .star {
+                font-size: 2.5rem;
+            }
+
+            .company-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .service-details {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-details h4 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .service-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .service-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1976d2;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-container">
+        <div class="review-header">
+            <h1><i class="fas fa-star"></i> Review Our Service</h1>
+            <p>Your feedback helps us serve you better</p>
+            <div class="company-info">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(437) 545-7974</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Scarborough, ON</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-star"></i>
+                    <span>Premium Window Tinting</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-content">
+            <div id="serviceDetails" class="service-details" style="display: none;">
+                <h4><i class="fas fa-info-circle"></i> Service Details</h4>
+                <div class="service-info">
+                    <div class="service-info-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Service Date: <span id="serviceDateDisplay"></span></span>
+                    </div>
+                    <div class="service-info-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Service: <span id="serviceTypeDisplay"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="review-form" id="reviewForm">
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Your Information</h3>
+                    <div class="form-group">
+                        <label for="customerName">Your Name</label>
+                        <input type="text" id="customerName" name="customerName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email Address</label>
+                        <input type="email" id="customerEmail" name="customerEmail" placeholder="your.email@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-star"></i> Rate Your Experience</h3>
+                    <div class="star-rating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <div class="rating-text" id="ratingText">Click stars to rate your experience</div>
+                    <input type="hidden" id="rating" name="rating" required>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-comment"></i> Share Your Experience</h3>
+                    <div class="form-group">
+                        <label for="reviewText">Your Review</label>
+                        <textarea id="reviewText" name="reviewText" rows="6" placeholder="Tell us about your experience with AI BABA AUTO DETAILING AND TINTING. What did you like most? How was our service?" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="wouldRecommend">Would you recommend us to friends?</label>
+                        <select id="wouldRecommend" name="wouldRecommend" required>
+                            <option value="">Please select</option>
+                            <option value="yes">Yes, absolutely!</option>
+                            <option value="maybe">Maybe</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Review
+                </button>
+            </form>
+
+            <div class="thank-you" id="thankYou">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You for Your Review!</h3>
+                <p>Your feedback has been submitted successfully. We appreciate you taking the time to share your experience with AI BABA AUTO DETAILING AND TINTING.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // EmailJS functionality removed
+
+        let selectedRating = 0;
+        const ratingTexts = {
+            1: "Poor - We need to improve",
+            2: "Fair - Room for improvement", 
+            3: "Good - Satisfactory service",
+            4: "Very Good - Great experience",
+            5: "Excellent - Outstanding service!"
+        };
+
+        // Star rating functionality
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.getElementById('ratingText');
+        const ratingInput = document.getElementById('rating');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.rating);
+                ratingInput.value = selectedRating;
+                updateStars();
+                ratingText.textContent = ratingTexts[selectedRating];
+            });
+
+            star.addEventListener('mouseenter', () => {
+                const hoverRating = parseInt(star.dataset.rating);
+                highlightStars(hoverRating);
+            });
+        });
+
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            updateStars();
+        });
+
+        function highlightStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function updateStars() {
+            highlightStars(selectedRating);
+        }
+
+        // Get device fingerprint for tracking
+        function getDeviceFingerprint() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.textBaseline = 'top';
+            ctx.font = '14px Arial';
+            ctx.fillText('Device fingerprint', 2, 2);
+
+            const fingerprint = btoa(JSON.stringify({
+                screen: `${screen.width}x${screen.height}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                language: navigator.language,
+                platform: navigator.platform,
+                userAgent: navigator.userAgent.substring(0, 50),
+                canvas: canvas.toDataURL()
+            })).substring(0, 32);
+
+            return fingerprint;
+        }
+
+        // Check if device has already submitted review
+        function hasDeviceSubmittedReview(email) {
+            const deviceId = getDeviceFingerprint();
+            const submittedDevices = JSON.parse(localStorage.getItem('reviewDevices') || '{}');
+            const emailKey = email.toLowerCase();
+
+            return submittedDevices[emailKey] && submittedDevices[emailKey].includes(deviceId);
+        }
+
+        // Mark device as having submitted review
+        function markDeviceAsSubmitted(email) {
+            const deviceId = getDeviceFingerprint();
+            const submittedDevices = JSON.parse(localStorage.getItem('reviewDevices') || '{}');
+            const emailKey = email.toLowerCase();
+
+            if (!submittedDevices[emailKey]) {
+                submittedDevices[emailKey] = [];
+            }
+
+            if (!submittedDevices[emailKey].includes(deviceId)) {
+                submittedDevices[emailKey].push(deviceId);
+                localStorage.setItem('reviewDevices', JSON.stringify(submittedDevices));
+            }
+        }
+
+        // Check for service details from URL parameters and review limits
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const requestId = urlParams.get('id');
+            const customerEmail = urlParams.get('customer');
+            const reviewLimit = parseInt(urlParams.get('limit')) || 1;
+
+            // Check review usage limits with proper per-request tracking
+            if (customerEmail && requestId) {
+                const existingReviews = JSON.parse(localStorage.getItem('aibabaReviews') || '[]');
+
+                // Filter reviews for this specific request ID only
+                const requestReviews = existingReviews.filter(review => 
+                    review.customerEmail.toLowerCase() === customerEmail.toLowerCase() &&
+                    review.requestId === requestId
+                );
+
+                // Get the review request to check the specific limit
+                const reviewRequests = JSON.parse(localStorage.getItem('aibabaReviewRequests') || '[]');
+                const currentRequest = reviewRequests.find(req => req.requestId === requestId);
+                const actualLimit = currentRequest ? (currentRequest.reviewLimit || 1) : reviewLimit;
+
+                // Only block if they've exceeded their limit for THIS specific request
+                if (requestReviews.length >= actualLimit) {
+                    document.querySelector('.review-content').innerHTML = `
+                        <div style="text-align: center; padding: 3rem;">
+                            <i class="fas fa-lock" style="font-size: 4rem; color: #dc3545; margin-bottom: 2rem;"></i>
+                            <h2 style="color: #dc3545; margin-bottom: 1rem;">Review Limit Reached</h2>
+                            <p style="font-size: 1.2rem; color: #6c757d; margin-bottom: 2rem;">
+                                You have already submitted ${requestReviews.length} review${requestReviews.length > 1 ? 's' : ''} for this specific request and reached the limit of ${actualLimit} review${actualLimit > 1 ? 's' : ''}.
+                            </p>
+                            <p style="color: #6c757d;">
+                                Each review request has its own submission limit. You may be able to submit reviews for other service requests.
+                            </p>
+                            <div style="background: #e8f5e8; border: 1px solid #4caf50; border-radius: 8px; padding: 1rem; margin: 2rem 0; color: #2e7d32;">
+                                <strong>Your Reviews for Request ${requestId}:</strong><br>
+                                ${requestReviews.map((review, index) => 
+                                    `${index + 1}. ${review.rating} stars - "${review.reviewText.substring(0, 50)}..." (${new Date(review.submittedAt).toLocaleDateString()})`
+                                ).join('<br>')}
+                            </div>
+                            <div style="margin-top: 2rem;">
+                                <a href="window-tinting.html" style="background: linear-gradient(135deg, #00d4ff, #0099cc); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600;">
+                                    Return to Homepage
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+            }
+
+            if (requestId) {
+                // Try to find service details from review requests
+                const reviewRequests = JSON.parse(localStorage.getItem('aibabaReviewRequests') || '[]');
+                const request = reviewRequests.find(req => req.requestId === requestId);
+
+                if (request) {
+                    document.getElementById('serviceDetails').style.display = 'block';
+                    document.getElementById('serviceDateDisplay').textContent = request.serviceDate;
+                    document.getElementById('serviceTypeDisplay').textContent = request.serviceType;
+                    document.getElementById('customerName').value = request.customerName;
+                    document.getElementById('customerEmail').value = request.customerEmail;
+                }
+            }
+        });
+
+        // Form submission
+        document.getElementById('reviewForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (selectedRating === 0) {
+                alert('Please select a star rating before submitting your review.');
+                return;
+            }
+
+            const formData = new FormData(e.target);
+            const customerEmail = formData.get('customerEmail').toLowerCase();
+
+            // Get URL parameters to check limits
+            const urlParams = new URLSearchParams(window.location.search);
+            const requestId = urlParams.get('id');
+            const reviewLimit = parseInt(urlParams.get('limit')) || 1;
+
+            // Check for duplicate reviews based on the specific request ID and limit
+            const existingReviews = JSON.parse(localStorage.getItem('aibabaReviews') || '[]');
+
+            // Filter reviews for this specific request ID only
+            const requestReviews = existingReviews.filter(review => 
+                review.customerEmail.toLowerCase() === customerEmail &&
+                review.requestId === requestId
+            );
+
+            // Get the specific review request to check its limit
+            const reviewRequests = JSON.parse(localStorage.getItem('aibabaReviewRequests') || '[]');
+            const currentRequest = reviewRequests.find(req => req.requestId === requestId);
+            const actualLimit = currentRequest ? (currentRequest.reviewLimit || 1) : reviewLimit;
+
+            if (requestReviews.length >= actualLimit) {
+                alert(`You have already submitted ${requestReviews.length} review(s) for this specific request and reached your limit of ${actualLimit} review(s).`);
+                return;
+            }
+
+            const reviewData = {
+                id: 'REV-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5).toUpperCase(),
+                customerName: formData.get('customerName'),
+                customerEmail: customerEmail,
+                rating: selectedRating,
+                reviewText: formData.get('reviewText'),
+                wouldRecommend: formData.get('wouldRecommend'),
+                submittedAt: new Date().toISOString(),
+                deviceFingerprint: getDeviceFingerprint(),
+                requestId: requestId, // Link review to specific request
+                isPublic: true // Flag to show in testimonials
+            };
+
+            const submitBtn = e.target.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+
+            try {
+                // Save review to localStorage
+                let reviews = JSON.parse(localStorage.getItem('aibabaReviews') || '[]');
+                reviews.push(reviewData);
+                localStorage.setItem('aibabaReviews', JSON.stringify(reviews));
+
+                // Track review usage for this specific request
+                let reviewUsage = JSON.parse(localStorage.getItem('reviewUsage') || '{}');
+                reviewUsage[customerEmail] = (reviewUsage[customerEmail] || 0) + 1;
+                localStorage.setItem('reviewUsage', JSON.stringify(reviewUsage));
+
+                // Mark this specific request as completed
+                if (requestId) {
+                    let completedRequests = JSON.parse(localStorage.getItem('completedReviewRequests') || '[]');
+                    if (!completedRequests.includes(requestId)) {
+                        completedRequests.push(requestId);
+                        localStorage.setItem('completedReviewRequests', JSON.stringify(completedRequests));
+                    }
+                }
+
+                // Force testimonials to reload on main page
+                localStorage.setItem('testimonialsNeedUpdate', 'true');
+
+                // Log review notification (email functionality removed)
+                sendReviewNotification(reviewData);
+
+                // Check if this came from template_82y3qmk and redirect to reviews page
+                const urlParams = new URLSearchParams(window.location.search);
+                const templateId = urlParams.get('template');
+
+                if (templateId === 'template_82y3qmk') {
+                    // Show brief success message then redirect
+                    document.querySelector('.review-form').style.display = 'none';
+                    document.getElementById('thankYou').innerHTML = `
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Review Submitted Successfully!</h3>
+                        <p>Thank you for your feedback! Redirecting you to see all reviews...</p>
+                    `;
+                    document.getElementById('thankYou').classList.add('show');
+
+                    // Redirect to reviews page after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'reviews-page.html';
+                    }, 2000);
+                } else {
+                    // Show regular thank you message
+                    document.querySelector('.review-form').style.display = 'none';
+                    document.getElementById('thankYou').classList.add('show');
+
+                    // Scroll to thank you message
+                    document.getElementById('thankYou').scrollIntoView({ behavior: 'smooth' });
+                }
+
+            } catch (error) {
+                console.error('Error submitting review:', error);
+                alert('Thank you for your review! Your feedback has been saved.');
+
+                // Still show success even if email fails
+                document.querySelector('.review-form').style.display = 'none';
+                document.getElementById('thankYou').classList.add('show');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Review notification functionality removed
+        function sendReviewNotification(reviewData) {
+            console.log('Review notification would be sent for:', reviewData.id);
+            return Promise.resolve();
+        }
+    </script>
+</body>
+</html>

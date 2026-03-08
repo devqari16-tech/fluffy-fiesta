@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Reviews - AI BABA AUTO DETAILING AND TINTING</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reviews-page {
+            padding: 140px 0 80px;
+            background: var(--primary-color);
+            min-height: 100vh;
+        }
+
+        .reviews-page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .reviews-page-title {
+            font-size: 3.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .reviews-page-subtitle {
+            color: var(--text-gray);
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .reviews-stats-summary {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-summary {
+            text-align: center;
+            background: var(--gradient-card);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(20px);
+            transition: var(--transition);
+            min-width: 150px;
+        }
+
+        .stat-summary:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .all-reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .review-card-full {
+            background: var(--gradient-card);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card-full::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card-full:hover::before {
+            transform: scaleX(1);
+        }
+
+        .review-card-full:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
+        }
+
+        .review-full-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviewer-info-full {
+            flex: 1;
+        }
+
+        .reviewer-info-full h4 {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-date-full {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-rating-full {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rating-stars-full {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .rating-stars-full i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+        }
+
+        .rating-number-full {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        .review-content-full {
+            margin-bottom: 1.5rem;
+        }
+
+        .review-text-full {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+            font-style: italic;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .review-text-full::before {
+            content: '"';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-family: serif;
+            opacity: 0.6;
+        }
+
+        .review-text-full::after {
+            content: '"';
+            position: absolute;
+            bottom: -12px;
+            right: 0;
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-family: serif;
+            opacity: 0.6;
+        }
+
+        .review-recommendation {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid #28a745;
+            color: #28a745;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .review-recommendation.maybe {
+            background: rgba(255, 193, 7, 0.1);
+            border-color: #ffc107;
+            color: #856404;
+        }
+
+        .review-recommendation.no {
+            background: rgba(220, 53, 69, 0.1);
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+
+        .review-id {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            opacity: 0.7;
+            font-family: monospace;
+        }
+
+        .back-to-services {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn-back {
+            background: var(--gradient-accent);
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-back:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+            text-decoration: none;
+            color: black;
+        }
+
+        .no-reviews {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-gray);
+        }
+
+        .no-reviews i {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            opacity: 0.5;
+        }
+
+        .no-reviews h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-color);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--gradient-accent);
+            color: black;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-page-title {
+                font-size: 2.5rem;
+            }
+
+            .reviews-stats-summary {
+                gap: 1.5rem;
+            }
+
+            .stat-summary {
+                min-width: 120px;
+                padding: 1.5rem 1rem;
+            }
+
+            .all-reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .review-card-full {
+                padding: 1.5rem;
+            }
+
+            .filter-controls {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>AI BABA <span>WINDOWS TINTING</span></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="window-tinting.html">Services</a></li>
+                    <li><a href="simulator.html">Simulator</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:+14375457974" class="staff-login-btn">
+                        <i class="fas fa-phone"></i> (437) 545-7974
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Reviews Page -->
+    <section class="reviews-page">
+        <div class="container">
+            <div class="back-to-services">
+                <a href="javascript:history.back()" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Services
+                </a>
+            </div>
+
+            <div class="reviews-page-header">
+                <h1 class="reviews-page-title">All Customer Reviews</h1>
+                <p class="reviews-page-subtitle">
+                    Read what our customers say about their experience with AI BABA AUTO DETAILING AND TINTING
+                </p>
+
+                <div class="reviews-stats-summary" id="reviewsStatsSummary">
+                    <div class="stat-summary">
+                        <div class="stat-number" id="totalReviewsCount">0</div>
+                        <div class="stat-label">Total Reviews</div>
+                    </div>
+                    <div class="stat-summary">
+                        <div class="stat-number" id="averageRating">0.0</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat-summary">
+                        <div class="stat-number" id="fiveStarCount">0</div>
+                        <div class="stat-label">5-Star Reviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-controls">
+                <button class="filter-btn active" onclick="filterReviews('all')">All Reviews</button>
+                <button class="filter-btn" onclick="filterReviews(5)">5 Stars</button>
+                <button class="filter-btn" onclick="filterReviews(4)">4 Stars</button>
+                <button class="filter-btn" onclick="filterReviews(3)">3 Stars</button>
+                <button class="filter-btn" onclick="filterReviews(2)">2 Stars</button>
+                <button class="filter-btn" onclick="filterReviews(1)">1 Star</button>
+            </div>
+
+            <div class="all-reviews-grid" id="allReviewsGrid">
+                <!-- Reviews will be populated by JavaScript -->
+            </div>
+
+            <div class="no-reviews" id="noReviewsMessage" style="display: none;">
+                <i class="fas fa-comments"></i>
+                <h3>No Reviews Yet</h3>
+                <p>Be the first to share your experience with AI BABA AUTO DETAILING AND TINTING!</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        let allReviews = [];
+        let filteredReviews = [];
+
+        // Load and display all reviews
+        function loadAllReviews() {
+            const reviews = JSON.parse(localStorage.getItem('aibabaReviews') || '[]');
+            allReviews = reviews.sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
+            filteredReviews = [...allReviews];
+
+            updateReviewsStats();
+            displayReviews(filteredReviews);
+        }
+
+        // Update statistics
+        function updateReviewsStats() {
+            const totalCount = allReviews.length;
+            const fiveStarCount = allReviews.filter(r => r.rating === 5).length;
+            const averageRating = totalCount > 0 ? 
+                (allReviews.reduce((sum, r) => sum + r.rating, 0) / totalCount).toFixed(1) : '0.0';
+
+            document.getElementById('totalReviewsCount').textContent = totalCount;
+            document.getElementById('averageRating').textContent = averageRating;
+            document.getElementById('fiveStarCount').textContent = fiveStarCount;
+        }
+
+        // Display reviews
+        function displayReviews(reviews) {
+            const grid = document.getElementById('allReviewsGrid');
+            const noReviewsMsg = document.getElementById('noReviewsMessage');
+
+            if (reviews.length === 0) {
+                grid.style.display = 'none';
+                noReviewsMsg.style.display = 'block';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noReviewsMsg.style.display = 'none';
+
+            grid.innerHTML = reviews.map(review => `
+                <div class="review-card-full">
+                    <div class="review-full-header">
+                        <div class="reviewer-info-full">
+                            <h4>${review.customerName}</h4>
+                            <div class="review-date-full">${new Date(review.submittedAt).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            })}</div>
+                            <div class="review-rating-full">
+                                <div class="rating-stars-full">
+                                    ${'<i class="fas fa-star"></i>'.repeat(review.rating)}${'<i class="far fa-star"></i>'.repeat(5 - review.rating)}
+                                </div>
+                                <span class="rating-number-full">${review.rating}/5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-content-full">
+                        <div class="review-text-full">${review.reviewText}</div>
+
+                        ${review.wouldRecommend ? `
+                            <div class="review-recommendation ${review.wouldRecommend === 'yes' ? '' : review.wouldRecommend === 'maybe' ? 'maybe' : 'no'}">
+                                <i class="fas fa-${review.wouldRecommend === 'yes' ? 'thumbs-up' : review.wouldRecommend === 'maybe' ? 'hand-point-right' : 'thumbs-down'}"></i>
+                                ${review.wouldRecommend === 'yes' ? 'Would Recommend' : 
+                                  review.wouldRecommend === 'maybe' ? 'Might Recommend' : 'Would Not Recommend'}
+                            </div>
+                        ` : ''}
+
+                        <div class="review-id">Review ID: ${review.id}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter reviews
+        function filterReviews(rating) {
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter reviews
+            if (rating === 'all') {
+                filteredReviews = [...allReviews];
+            } else {
+                filteredReviews = allReviews.filter(review => review.rating === rating);
+            }
+
+            displayReviews(filteredReviews);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllReviews();
+
+            // Check for updates every 3 seconds
+            setInterval(() => {
+                if (localStorage.getItem('testimonialsNeedUpdate') === 'true') {
+                    loadAllReviews();
+                    localStorage.removeItem('testimonialsNeedUpdate');
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+<footer>
+    <h3>AI BABA <span>SERVICES INC</span></h3>
+</footer>
+</html>

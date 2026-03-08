@@ -1,0 +1,32 @@
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /window-tinting.html
+Allow: /detailing.html
+Allow: /ceramic-coating.html
+Allow: /commercial-residential.html
+Allow: /service-selector.html
+Allow: /simulator.html
+Allow: /reviews-page.html
+
+# Disallow admin and private areas
+Disallow: /staff-dashboard.html
+Disallow: /review.html
+Disallow: /reset-password.html
+Disallow: /*.json
+Disallow: /*.md
+
+# Allow important static files
+Allow: /pics/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://aibabaservices.ca/sitemap.xml
